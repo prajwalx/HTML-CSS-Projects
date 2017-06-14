@@ -1,0 +1,313 @@
+<html>
+<head>
+<style>
+
+body
+  {
+    background-color: grey;
+  }
+div#circle
+{
+width:100px;
+height:100px;
+background-color:grey;
+/*box-shadow: 10px 10px 5px #888888;*/
+border-radius:99px;
+border-style:solid;
+border-color:black;
+position:absolute;
+left:65px;
+top:65px;
+
+}
+div#len1
+{
+  width:80px;
+  height:80px;
+  background-color:midnightblue;
+  /*box-shadow: 10px 10px 5px #888888;*/
+  border-radius:88px;
+  border-style:solid;
+  border-color:cornflowerblue ;
+  position:absolute;
+  left:75px;
+  top:75px;
+
+}
+div#len2
+{
+  width:40px;
+  height:40px;
+  background-color:PaleTurquoise ;
+  /*box-shadow: 10px 10px 5px #888888;*/
+  border-radius:88px;
+  border-style:solid;
+  border-color:darkslateblue ;
+  position:absolute;
+  left:95px;
+  top:95px;
+
+}
+
+div#strip
+{
+  height: 110px;
+  background-color: #54b59a;
+  border-top: 10px solid #479a83;
+  border-bottom: 10px solid #479a83;
+  margin: 80px 0px;
+  box-shadow: 0px 2px 0px rgba(0, 0, 0, .4);
+}
+div#c1
+{
+width:200px;
+height:200px;
+background-color: black;
+border-radius: 200px;
+border-style:solid;
+border-color:black;
+position:absolute;
+top:17px;
+left:17px;
+
+}
+div#c2
+{
+width:223px;
+height:223px;
+background-color: #595959;
+border-radius: 223px;
+border-style:solid;
+border-color:black;
+position:absolute;
+
+left:6.5px;
+bottom:6.5px;
+
+
+}
+div#c3
+{
+width:240px;
+height:240px;
+background-color: LightSlateGray ;
+border-radius: 240px;
+border-style: solid;
+border-color:black;
+position:relative;
+left:600px;
+top:200px;
+overflow: hidden;
+transition: all 1000ms cubic-bezier(0.005, 1.650, 1.000, -0.600);
+transition-timing-function: cubic-bezier(0.005, 1.650, 1.000, -0.600);
+}
+div#c3:hover
+{
+  box-shadow: 0px 0px 20px 5px #FFFFFF;
+}
+div#showOff
+{
+   width: 340px;
+   height: 340px;
+   position: absolute;
+   top: -600px;
+   left: -600px;
+   transition: 1s;
+   transform: rotate(30deg);
+   background: linear-gradient(0deg, rgba(255, 255, 255, 0)50%, rgba(255, 255, 255, 0.7)100%);
+}
+
+div#c6
+{
+width:45px;
+height:45px;
+background-color:silver;
+border-radius:45px;
+border-style:solid;
+border-color:white;
+position:absolute;
+top:45px;
+left:36px;
+}
+div#c66
+{
+width:45px;
+height:45px;
+background-color:silver;
+border-radius:45px;
+border-style:solid;
+border-color:white;
+position:absolute;
+left:18px;
+top:90px;
+}
+div#c67
+{
+width:47px;
+height:47px;
+background-color:silver;
+border-radius:47px;
+border-style:solid;
+border-color:white;
+position:absolute;
+right:35px;
+top:45px;
+}
+div#c68
+{
+width:47px;
+height:47px;
+background-color:silver;
+border-radius:47px;
+border-style:solid;
+border-color:white;
+position:absolute;
+bottom:30px;
+right:52px;
+}
+div#c69
+{
+width:47px;
+height:47px;
+background-color:silver;
+border-radius:47px;
+border-style:solid;
+border-color:white;
+position:absolute;
+bottom:49px;
+left:30px;
+}
+div#c70
+{
+width:47px;
+height:47px;
+background-color:silver;
+border-radius:47px;
+border-style:solid;
+border-color:white;
+position:absolute;
+bottom:20px;
+left:78px;
+}
+
+div#c71
+{
+width:45px;
+height:45px;
+background-color:silver;
+border-radius:45px;
+border-style:solid;
+border-color:white;
+position:absolute;
+top:18px;
+right:95px;
+}
+div#c72
+{
+width:47px;
+height:47px;
+background-color:silver;
+border-radius:47px;
+border-style:solid;
+border-color:white;
+position:absolute;
+bottom:79px;
+right:20px;
+}
+div#c3:hover #showOff
+{
+  top: 0px;
+  left: 0px;
+  transform: rotate(0deg);
+}
+div#len3
+{
+  width:10px;
+  height:10px;
+  background-color:white ;
+  /*box-shadow: 10px 10px 5px #888888;*/
+  border-radius:11px;
+
+  position:absolute;
+  left:95px;
+  top:94px;
+}
+div#len4
+{
+  width:20px;
+  height:20px;
+  background-color:white ;
+  /*box-shadow: 10px 10px 5px #888888;*/
+  border-radius:22px;
+
+  position:absolute;
+  left:107px;
+  top:107px;
+}
+div#triangle-up
+{
+   width: 0;
+   height: 0;
+   border-left: 50px solid transparent;
+   border-right: 50px solid transparent;
+  border-bottom: 100px solid black;
+  position: absolute;
+  top: 441px;
+  left:685px;
+}
+</style>
+</head>
+
+<body>
+
+<div id="c3">
+  <div id="c2">
+  </div>
+<div id="c1">
+</div>
+
+<div id="circle">
+</div>
+
+<div id="c4">
+</div>
+<div id="c5">
+</div>
+<div id="c6">
+</div>
+
+<div id="c66">
+</div>
+
+<div id="c67">
+</div>
+<div id="c68">
+</div>
+<div id="c69">
+</div>
+<div id="c70">
+</div>
+<div id="c71">
+</div>
+<div id="c72">
+</div>
+<div id="showOf">
+</div>
+<div id="strip">
+</div>
+<div id="len1">
+</div>
+<div id="len2">
+</div>
+<div id="len3">
+</div>
+<div id="len4">
+</div>
+
+</div>
+
+
+<div id="triangle-up">
+</div>
+</body>
+</html>
