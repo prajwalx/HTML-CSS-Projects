@@ -1,0 +1,209 @@
+<html>
+<head>
+<style>
+body
+{
+  background-color:grey;
+}
+div.board
+{
+  height: 200px;
+  width:750px;
+  background-color: white;
+  border-style: solid;
+  border-color: black;
+  border-top: 40px solid black;
+  border-left: 20px solid black;
+  border-right: 20px solid black;
+  border-bottom: 10px solid black;
+  position: relative;
+  overflow: hidden;
+  top:200px;
+  left: 300px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 20px 5px #FFFFFF;
+
+}
+div.key1
+{
+  width: 53px;
+  height: 202px;
+
+  border-style: solid;
+  border-color: transparent black transparent transparent ;
+  position:absolute;
+  top:0px;
+  border-radius: 0px;
+}
+div.position0
+{
+left:53px;
+}
+div.position
+{
+left:106px;
+}
+div.position1
+{
+left:159px;
+}
+div.position2
+{
+
+left:212px;
+}
+div.position3
+{
+
+left:265px;
+}
+div.position4
+{
+
+left:318px;
+}
+div.position5
+{
+
+left:371px;
+}
+div.position6
+{
+left:424px;
+}
+
+div.position7
+{
+left:477px;
+}
+div.position8
+{
+left:530px;
+}
+div.position9
+{
+left:583px;
+}
+div.position10
+{
+left:636px;
+}
+div.position11
+{
+left:689px;
+border-style: solid;
+border-color: transparent;
+}
+
+/*-------------------*/
+div.black
+{
+  height: 141.4px;
+  width: 26px;
+  background-color: black;
+  position: absolute;
+  top:0px;
+  left:44px;
+  border-radius: 5px;
+}
+div.pos0
+{
+  left:98px;
+}
+div.pos1
+{
+  left:204px;
+}
+div.pos2
+{
+  left:257px;
+}
+div.pos3
+{
+  left:310px;
+}
+div.pos4
+{
+  left:416px;
+}
+div.pos5
+{
+  left:469px;
+}
+div.pos6
+{
+  left:575px;
+}
+div.pos7
+{
+  left:628px;
+}
+div.pos8
+{
+  left:681px;
+}
+
+</style>
+</head>
+<body>
+  <script>
+  function playSound(file)
+{
+  var aud=new Audio(file);
+
+  aud.play();
+}
+</script>
+  <div class="board">
+    <div class="key1" onclick="playSound('68437__pinkyfinger__piano-a.wav');" >
+    </div>
+    <div class="key1 position0" onclick="playSound('68438__pinkyfinger__piano-b.wav');">
+    </div>
+<div class="key1 position" onclick="playSound('68439__pinkyfinger__piano-bb.wav');">
+</div>
+<div class="key1 position1"onclick="playSound('68440__pinkyfinger__piano-c.wav');" >
+</div>
+<div class="key1 position2" onclick="playSound('68441__pinkyfinger__piano-c.wav');">
+</div>
+<div class="key1 position3" onclick="playSound('68442__pinkyfinger__piano-d.wav');">
+</div>
+<div class="key1 position4" onclick="playSound('68443__pinkyfinger__piano-e.wav');">
+</div>
+<div class="key1 position5" onclick="playSound('68444__pinkyfinger__piano-eb.wav');">
+</div>
+<div class="key1 position6" onclick="playSound('68445__pinkyfinger__piano-f.wav');">
+</div>
+<div class="key1 position7" onclick="playSound('68446__pinkyfinger__piano-f.wav');">
+</div>
+<div class="key1 position8" onclick="playSound('68447__pinkyfinger__piano-g.wav');">
+</div>
+<div class="key1 position9" onclick="playSound('68448__pinkyfinger__piano-g.wav');">
+</div>
+<div class="key1 position10" onclick="playSound('68438__pinkyfinger__piano-b.wav');">
+</div>
+<div class="key1 position11" onclick="playSound('68439__pinkyfinger__piano-bb.wav');">
+</div>
+
+<div class="black" onclick="playSound('68448__pinkyfinger__piano-g.wav');">
+</div>
+<div class="black pos0" onclick="playSound('68446__pinkyfinger__piano-f.wav');">
+</div>
+<div class="black pos1" onclick="playSound('68442__pinkyfinger__piano-d.wav');">
+</div>
+<div class="black pos2" onclick="playSound('68443__pinkyfinger__piano-e.wav');">
+</div>
+<div class="black pos3" onclick="playSound('68448__pinkyfinger__piano-g.wav');">
+</div>
+<div class="black pos4" onclick="playSound('68440__pinkyfinger__piano-c.wav');">
+</div>
+<div class="black pos5" onclick="playSound('68437__pinkyfinger__piano-a.wav');">
+</div>
+<div class="black pos6" onclick="playSound('68445__pinkyfinger__piano-f.wav');">
+</div>
+<div class="black pos7" onclick="playSound('68438__pinkyfinger__piano-b.wav');">
+</div>
+<div class="black pos8" onclick="playSound('68444__pinkyfinger__piano-eb.wav');">
+</div>
+  </div>
+</body>
+</html>
