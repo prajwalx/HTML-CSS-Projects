@@ -1,11 +1,192 @@
 <html>
 <head>
 <style>
+body
+{
+  background-color: skyblue;
+}
+div.carbody
+{
+  width:300px;
+  height:100px;
+  background-color: crimson;
+  position: relative;
+  top:400px;
+  left:0px;
+  border-top-left-radius: 36px;
+  border-top-right-radius: 90px;
+  animation: moveRight 5s infinite linear ;
+
+
+}
+
+
+
+div.cartop
+{
+  width:180px;
+  height:90px;
+  background-color:  	#8B0000;
+  position: absolute;
+  top:-90px;
+  left:25px;
+  border-top-right-radius: 48px;
+  border-top-left-radius: 24px;
+}
+div.window
+{
+  width:70px;
+  height: 68px;
+  background-color: white;
+  border: solid 4px indianred;
+  position: absolute;
+  bottom: 4px;
+}
+div.winpos1
+{
+  position: absolute;
+
+  left:6px;
+  border-top-left-radius: 24px;
+}
+div.winpos2
+{
+  position: absolute;
+
+  left:88px;
+  border-top-right-radius: 30px;
+}
+div.tyre
+{
+  width: 60px;
+  height: 60px;
+  border-radius:60px;
+  background-color: grey;
+  border:solid 15px black;
+  position: absolute;
+  box-shadow: 0px 0px 20px 5px #FFFFFF;
+
+}
+div.tyrpos1
+{
+  bottom:-40px;
+  left:10px;
+}
+div.tyrpos2
+{
+  bottom:-40px;
+  right:15px;
+}
+div.tyralloy
+{
+  width: 30px;
+  height:30px;
+
+  border-style: solid;
+  border-radius: 60px;
+  border-color:  black transparent black transparent ;
+  position: absolute;
+  top:12px;
+  left:12px;
+  -moz-animation: roll 1s infinite linear;
+
+
+
+}
+div#canvas-wrap
+{
+  position: relative;
+}
+div#overlay
+{
+  position: absolute;
+  top:20px;
+  left:30px;
+}
+@keyframes roll
+{
+0%
+{
+  -moz-transform:rotate(0deg);
+}
+100%
+{
+  -moz-transform:rotate(360deg);
+}
+}
+@keyframes moveRight
+ {
+   0%
+   {
+     transform: translateX(-1px);
+   }
+
+
+   100%
+   {
+     transform: translateX(1500px);
+   }
+}
 
 
 </style>
 </head>
 <body>
+
+
+
+<div class="carbody">
+  <div class="cartop">
+    <div class="window winpos1">
+  </div>
+  <div class="window winpos2">
+  </div>
+   </div>
+   <div class="tyre tyrpos1">
+     <div class="tyralloy">
+     </div>
+   </div>
+   <div class="tyre tyrpos2">
+     <div class="tyralloy">
+     </div>
+   </div>
+
+
+
+</div>
+
+<canvas
+id="myCanvas"
+style="position:absolute;
+bottom:20px;
+left:5px;
+border:0.1px solid black;
+"
+
+width="1300"
+height="599"
+
+>
+<script>
+var c=document.getElementById('myCanvas')
+var ctx=c.getContext("2d")
+ctx.beginPath();
+ctx.moveTo(0,150);
+ctx.bezierCurveTo(400,20,675,125,1300,5);
+ctx.stroke();
+
+</script>
+
+<script>
+var c=document.getElementById('myCanvas')
+var ctx=c.getContext("2d")
+ctx.beginPath();
+ctx.moveTo(0,350);
+ctx.bezierCurveTo(400,100,950,250,1300,200);
+ctx.stroke();
+
+</script>
+<canvas
 
 
 </body>
