@@ -3,7 +3,7 @@
 <style>
 body
 {
-  background-color: skyblue;
+  background-color: black;
 }
 div.carbody
 {
@@ -11,11 +11,11 @@ div.carbody
   height:100px;
   background-color: crimson;
   position: relative;
-  top:400px;
-  left:0px;
+  top:600px;
+  left:1350px;
   border-top-left-radius: 36px;
   border-top-right-radius: 90px;
-  animation: moveRight 5s infinite linear ;
+  -moz-animation: moveIt 5s infinite  ease-in-out;
 
 
 }
@@ -95,14 +95,14 @@ div.tyralloy
 }
 div#canvas-wrap
 {
-  position: relative;
-}
-div#overlay
-{
+  width: 1300px;
+  height: 600px;
   position: absolute;
-  top:20px;
-  left:30px;
+  top:50px;
+
+  background-color: skyblue;
 }
+
 @keyframes roll
 {
 0%
@@ -128,12 +128,79 @@ div#overlay
    }
 }
 
+@keyframes moveIt {
+  0%
+  {
+    /*transform: translateX(0px);
+    transform: translateY(450px);*/
+    top:380px;
+    left:-10px;
+    transform: rotate(-30deg);
+  }
+  30%
+  {
+    top:250px;
+    left:850px;
+    transform: rotate(0deg);
+  }
+  50%
+  {
+    /*transform: translateX(650px);
+    transform: translateY(250px);*/
+    top:0px;
+    left:450px;
+    transform: rotate(360deg);
+  }
+
+  55%
+  {
+    top:400px;
+    left:900px;
+    transform: rotate(45deg);
+  }
+  100%
+  {
+    /*transform: translateX(1300px);
+    transform: translateY(690px);*/
+
+    transform: rotate(45deg);
+  }
+
+
+}
 
 </style>
 </head>
 <body>
 
 
+
+<div id="canvas-wrap">
+
+<canvas
+id="myCanvas"
+style="position:absolute;
+top:50px;
+left:0px;
+border:0.1px  black;
+"
+width="1300"
+height="599"
+
+>
+
+
+<script>
+var c=document.getElementById('myCanvas')
+var ctx=c.getContext("2d")
+ctx.beginPath();
+ctx.moveTo(0,550);
+ctx.bezierCurveTo(900,100,650,250,1300,550);
+ctx.stroke();
+ctx.fillStyle="lawngreen";
+ctx.fill();
+</script>
+</canvas>
 
 <div class="carbody">
   <div class="cartop">
@@ -151,42 +218,11 @@ div#overlay
      </div>
    </div>
 
-
-
 </div>
 
-<canvas
-id="myCanvas"
-style="position:absolute;
-bottom:20px;
-left:5px;
-border:0.1px solid black;
-"
-
-width="1300"
-height="599"
-
->
-<script>
-var c=document.getElementById('myCanvas')
-var ctx=c.getContext("2d")
-ctx.beginPath();
-ctx.moveTo(0,150);
-ctx.bezierCurveTo(400,20,675,125,1300,5);
-ctx.stroke();
-
-</script>
-
-<script>
-var c=document.getElementById('myCanvas')
-var ctx=c.getContext("2d")
-ctx.beginPath();
-ctx.moveTo(0,350);
-ctx.bezierCurveTo(400,100,950,250,1300,200);
-ctx.stroke();
-
-</script>
-<canvas
+</div>
+<div class="ocean">
+</div>
 
 
 </body>

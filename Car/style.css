@@ -1,0 +1,151 @@
+body
+{
+background-color: skyblue;
+}
+div.carbody
+{
+
+  width:150px;
+  height:50px;
+  background-color: crimson;
+  position: absolute;
+  top:500px;
+  left:60px;
+  border-top-left-radius: 18px;
+  border-top-right-radius: 45px;
+  opacity: 1;
+
+}
+div.sun
+{
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: orange;
+  position: absolute;
+  top:50px;
+  right:0px;
+  box-shadow: 0px 0px 20px 5px #FFFFFF;
+  animation: moveLeft 5s infinite linear;
+}
+div.ocean
+{
+  height: 180px;
+  width:100%;
+  background-color:  #2B65EC;
+  position: absolute;
+  top:810px;
+  left:0px;
+
+}
+
+div.cartop
+{
+  width:90px;
+  height:40px;
+  background-color:  	#8B0000;
+  position: absolute;
+  top:-40px;
+  left:12.5px;
+  border-top-right-radius: 24px;
+  border-top-left-radius: 12px;
+}
+div.window
+{
+  width:30px;
+  height: 31px;
+  background-color: white;
+  border: solid 4px indianred;
+  position: absolute;
+  bottom: 0.5px;
+}
+div.winpos1
+{
+  position: absolute;
+
+  left:3px;
+  border-top-left-radius: 12px;
+}
+div.winpos2
+{
+  position: absolute;
+
+  left:44px;
+  border-top-right-radius: 15px;
+}
+div.tyre
+{
+  width: 30px;
+  height: 30px;
+  border-radius:30px;
+  background-color: grey;
+  border:solid 7.5px black;
+  position: absolute;
+  box-shadow: 0px 0px 20px 5px #FFFFFF;
+
+}
+div.tyrpos1
+{
+  bottom:-20px;
+  left:10px;
+}
+div.tyrpos2
+{
+  bottom:-20px;
+  right:15px;
+}
+div.tyralloy
+{
+  width: 15px;
+  height:15px;
+
+  border-style: solid;
+  border-radius: 30px;
+  border-color:  black transparent black transparent ;
+  position: absolute;
+  top:5px;
+  left:5px;
+  -moz-animation: roll 1s infinite linear;
+
+
+
+}
+
+
+@keyframes roll
+{
+0%
+{
+  -moz-transform:rotate(0deg);
+}
+100%
+{
+  -moz-transform:rotate(360deg);
+}
+}
+@keyframes moveRight
+ {
+   0%
+   {
+     transform: translateX(-1px);
+   }
+
+
+   100%
+   {
+     transform: translateX(1500px);
+   }
+}
+@keyframes moveLeft
+ {
+   0%
+   {
+     right:50;
+   }
+
+
+   100%
+   {
+     right:2500px;
+   }
+}

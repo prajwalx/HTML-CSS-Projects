@@ -1,0 +1,130 @@
+<html>
+<head>
+  <link rel="stylesheet" type="text/css" href="style.css">
+   <meta charset="UTF-8">
+</head>
+<body>
+
+  <svg height="850"width="2580"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xhtml">
+
+
+  <g transform="translate(0,2.5) ">
+
+
+  <path id="track"d="M 0 650 T 100 400 2500 650" stroke="lawngreen"fill="green" stroke-width="15"/>
+</g>
+
+<g transform="translate(60,-40)">
+  <path id="track2"d="M -50 850 T 100 550 2500 850" stroke="lawngreen"fill="darkgreen" stroke-width="15"/>
+
+  </g>
+  </svg>
+  <div class="carbody"onclick="movee()">
+    <div class="cartop">
+      <div class="window winpos1">
+    </div>
+    <div class="window winpos2">
+    </div>
+     </div>
+     <div class="tyre tyrpos1">
+       <div class="tyralloy">
+       </div>
+     </div>
+     <div class="tyre tyrpos2">
+       <div class="tyralloy">
+       </div>
+     </div>
+
+  </div>
+<div class="ocean">
+  </div>
+  <div class="sun">
+    </div>
+<script>
+
+function point(x,y) {
+  this.x=x;
+  this.y=y;
+
+}
+
+function toNumberY(str)
+{
+
+  return ((str*1)-20);
+}
+function toNum(str)
+{
+  return str*1;
+}
+function cal()
+{
+var c=  document.getElementsByClassName('carbody');
+var p=document.getElementById('track');
+var points=[];
+var len = p.getTotalLength();
+var ang;
+for (var i=0;i<=100;i+=1)
+{
+  var pct = i/100;
+  var pt = p.getPointAtLength(pct*len);
+  pt.y=(toNumberY(pt.y)).toString();
+
+
+
+  points.push(new point(pt.x,pt.y));
+  console.log(points[i].x,points[i].y);
+}
+return points;
+}
+function angl()
+{
+  var ang=[];
+  var po=cal();
+
+  for (var i=0;i<100;i+=1)
+  {
+  ang[i]=(Math.atan( ((parseFloat(po[i+1].y)) - (parseFloat(po[i].y)) )/((parseFloat(po[i+1].x)) - (parseFloat(po[i].x)) ) ))*180/Math.PI ;
+  console.log(ang[i])
+  }
+  return ang;
+}
+function movee()
+{
+  var c=document.getElementsByClassName('carbody');
+
+  var pos=0;
+  var po=cal();
+  var an=angl();
+  var tim=0;
+
+  var id=setInterval(frame,37);
+  var i=0;
+  function frame()
+  {
+    if(pos>=2000)
+    {
+
+    c[0].style.left=(po[0].x)+'px';
+    c[0].style.top=(po[0].y)+'px';
+    c[0].style.transform = 'rotate('+an[0]+'deg)';
+    clearInterval(id);
+
+
+    }
+
+    else
+    {
+      c[0].style.left=(po[i].x)+'px';
+      c[0].style.top=(po[i].y)+'px';
+      c[0].style.transform = 'rotate('+an[i++]+'deg)';
+      pos=po[i].x;
+    }
+  }
+
+
+}
+
+</script>
+</body>
+</html>

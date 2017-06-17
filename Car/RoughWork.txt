@@ -1,0 +1,405 @@
+<html>
+<head>
+<style>
+body
+{
+  background-color: black;
+}
+div.carbody
+{
+  width:300px;
+  height:100px;
+  background-color: crimson;
+  position: relative;
+  top:600px;
+  left:1350px;
+  border-top-left-radius: 36px;
+  border-top-right-radius: 90px;
+  -moz-animation: moveIt 5s infinite  ease-in-out;
+
+
+}
+
+
+
+div.cartop
+{
+  width:180px;
+  height:90px;
+  background-color:  	#8B0000;
+  position: absolute;
+  top:-90px;
+  left:25px;
+  border-top-right-radius: 48px;
+  border-top-left-radius: 24px;
+}
+div.window
+{
+  width:70px;
+  height: 68px;
+  background-color: white;
+  border: solid 4px indianred;
+  position: absolute;
+  bottom: 4px;
+}
+div.winpos1
+{
+  position: absolute;
+
+  left:6px;
+  border-top-left-radius: 24px;
+}
+div.winpos2
+{
+  position: absolute;
+
+  left:88px;
+  border-top-right-radius: 30px;
+}
+div.tyre
+{
+  width: 60px;
+  height: 60px;
+  border-radius:60px;
+  background-color: grey;
+  border:solid 15px black;
+  position: absolute;
+  box-shadow: 0px 0px 20px 5px #FFFFFF;
+
+}
+div.tyrpos1
+{
+  bottom:-40px;
+  left:10px;
+}
+div.tyrpos2
+{
+  bottom:-40px;
+  right:15px;
+}
+div.tyralloy
+{
+  width: 30px;
+  height:30px;
+
+  border-style: solid;
+  border-radius: 60px;
+  border-color:  black transparent black transparent ;
+  position: absolute;
+  top:12px;
+  left:12px;
+  -moz-animation: roll 1s infinite linear;
+
+
+
+}
+div#canvas-wrap
+{
+  width: 1300px;
+  height: 600px;
+  position: absolute;
+  top:50px;
+
+  background-color: skyblue;
+}
+
+@keyframes roll
+{
+0%
+{
+  -moz-transform:rotate(0deg);
+}
+100%
+{
+  -moz-transform:rotate(360deg);
+}
+}
+@keyframes moveRight
+ {
+   0%
+   {
+     transform: translateX(-1px);
+   }
+
+
+   100%
+   {
+     transform: translateX(1500px);
+   }
+}
+
+@keyframes moveIt {
+  0%
+  {
+    /*transform: translateX(0px);
+    transform: translateY(450px);*/
+    top:380px;
+    left:-10px;
+    transform: rotate(-30deg);
+  }
+  30%
+  {
+    top:250px;
+    left:850px;
+    transform: rotate(0deg);
+  }
+  50%
+  {
+    /*transform: translateX(650px);
+    transform: translateY(250px);*/
+    top:0px;
+    left:350px;
+    transform: rotate(360deg);
+  }
+
+  55%
+  {
+    top:400px;
+    left:900px;
+    transform: rotate(45deg);
+  }
+  100%
+  {
+    /*transform: translateX(1300px);
+    transform: translateY(690px);*/
+
+    transform: rotate(45deg);
+  }
+
+
+}
+
+</style>
+</head>
+<body>
+
+
+
+<div id="canvas-wrap">
+
+<canvas
+id="myCanvas"
+style="position:absolute;
+top:50px;
+left:0px;
+border:0.1px  black;
+"
+width="1300"
+height="599"
+
+>
+
+
+<script>
+var c=document.getElementById('myCanvas')
+var ctx=c.getContext("2d")
+ctx.beginPath();
+ctx.moveTo(0,550);
+ctx.bezierCurveTo(900,100,650,250,1300,550);
+ctx.stroke();
+ctx.fillStyle="lawngreen";
+ctx.fill();
+</script>
+</canvas>
+
+<div class="carbody">
+  <div class="cartop">
+    <div class="window winpos1">
+  </div>
+  <div class="window winpos2">
+  </div>
+   </div>
+   <div class="tyre tyrpos1">
+     <div class="tyralloy">
+     </div>
+   </div>
+   <div class="tyre tyrpos2">
+     <div class="tyralloy">
+     </div>
+   </div>
+
+</div>
+
+</div>
+
+
+
+</body>
+</html>
+-----------------------------------------------------------------car divs
+<div class="carbody">
+  <div class="cartop">
+    <div class="window winpos1">
+  </div>
+  <div class="window winpos2">
+  </div>
+   </div>
+   <div class="tyre tyrpos1">
+     <div class="tyralloy">
+     </div>
+   </div>
+   <div class="tyre tyrpos2">
+     <div class="tyralloy">
+     </div>
+   </div>
+
+</div>
+---------------------------------------SVG Foreign Object
+<g xmlns:xlink="http://www.w3.org/1999/xlink">
+ <animate xlink:href=".carbody" attributeType="CSS" attributeName="opacity"  from="0"  to="1"  begin="0s" dur="1s" fill="freeze" />
+</g>
+
+
+<foreignObject  width="300" height="620">
+
+  <html xmlns="http://www.w3.org/1999/xhtml">
+<body>
+<div class="carbody" style="style.css">
+  <div class="cartop" style="style.css">
+    <div class="window winpos1" style="style.css">
+  </div>
+  <div class="window winpos2" style="style.css">
+  </div>
+   </div>
+   <div class="tyre tyrpos1" style="style.css">
+     <div class="tyralloy" style="style.css">
+     </div>
+   </div>
+   <div class="tyre tyrpos2" style="style.css">
+     <div class="tyralloy" style="style.css">
+     </div>
+   </div>
+ </div>
+ </body>
+   </html>
+
+
+</foreignObject>
+---------------------------------------SVG
+
+<svg height="800"width="1500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xhtml">
+
+<path id="track"d="M -70 650 q 550 -450 1580 0" stroke="darkgreen"fill="lawngreen"/>
+
+</svg>
+---------------------------------------------------------
+<path d="M37,179 C309,292 225,10 450,215" />
+----------------------------------------------------------------------------style.css
+body
+{
+background-color: skyblue;
+}
+div.carbody
+{
+
+  width:300px;
+  height:100px;
+  background-color: crimson;
+  position: absolute;
+  top:500px;
+  left:0px;
+  border-top-left-radius: 36px;
+  border-top-right-radius: 90px;
+  opacity: 1;
+  transform: rotate(-38.814899435726716deg);
+}
+
+
+
+div.cartop
+{
+  width:180px;
+  height:90px;
+  background-color:  	#8B0000;
+  position: absolute;
+  top:-90px;
+  left:25px;
+  border-top-right-radius: 48px;
+  border-top-left-radius: 24px;
+}
+div.window
+{
+  width:70px;
+  height: 68px;
+  background-color: white;
+  border: solid 4px indianred;
+  position: absolute;
+  bottom: 4px;
+}
+div.winpos1
+{
+  position: absolute;
+
+  left:6px;
+  border-top-left-radius: 24px;
+}
+div.winpos2
+{
+  position: absolute;
+
+  left:88px;
+  border-top-right-radius: 30px;
+}
+div.tyre
+{
+  width: 60px;
+  height: 60px;
+  border-radius:60px;
+  background-color: grey;
+  border:solid 15px black;
+  position: absolute;
+  box-shadow: 0px 0px 20px 5px #FFFFFF;
+
+}
+div.tyrpos1
+{
+  bottom:-40px;
+  left:10px;
+}
+div.tyrpos2
+{
+  bottom:-40px;
+  right:15px;
+}
+div.tyralloy
+{
+  width: 30px;
+  height:30px;
+
+  border-style: solid;
+  border-radius: 60px;
+  border-color:  black transparent black transparent ;
+  position: absolute;
+  top:12px;
+  left:12px;
+  -moz-animation: roll 1s infinite linear;
+
+
+
+}
+
+
+@keyframes roll
+{
+0%
+{
+  -moz-transform:rotate(0deg);
+}
+100%
+{
+  -moz-transform:rotate(360deg);
+}
+}
+@keyframes moveRight
+ {
+   0%
+   {
+     transform: translateX(-1px);
+   }
+
+
+   100%
+   {
+     transform: translateX(1500px);
+   }
+}
