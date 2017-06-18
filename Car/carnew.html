@@ -7,15 +7,17 @@
 
   <svg height="850"width="2580"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xhtml">
 
-
+    <g transform="translate(0,650) ">
+      <rect width="2500"height="500" fill="darkgreen"/>
+    </g>
   <g transform="translate(0,2.5) ">
 
 
-  <path id="track"d="M 0 650 T 100 400 2500 650" stroke="lawngreen"fill="green" stroke-width="15"/>
+  <path id="track"d="M 0 650 T 200 400 2500 650" stroke="lawngreen"fill="darkgreen" stroke-width="15"/>
 </g>
 
 <g transform="translate(60,-40)">
-  <path id="track2"d="M -50 850 T 100 550 2500 850" stroke="lawngreen"fill="darkgreen" stroke-width="15"/>
+  <path id="track2"d="M -50 850 T 200 550 2500 850" stroke="lawngreen"fill="green" stroke-width="15"/>
 
   </g>
   </svg>
@@ -92,7 +94,8 @@ function angl()
 function movee()
 {
   var c=document.getElementsByClassName('carbody');
-
+  var su=document.getElementsByClassName('sun');
+  su[0].style.webkitAnimationPlayState='running';
   var pos=0;
   var po=cal();
   var an=angl();
@@ -108,6 +111,7 @@ function movee()
     c[0].style.left=(po[0].x)+'px';
     c[0].style.top=(po[0].y)+'px';
     c[0].style.transform = 'rotate('+an[0]+'deg)';
+    su[0].style.webkitAnimationPlayState='paused';
     clearInterval(id);
 
 
