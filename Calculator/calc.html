@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Calculator</title>
+    <style >
+      .calc
+      {
+        position: relative;
+        width: 390px;
+        height: 600px;
+        background-color: transparent;
+        border: 5px solid black;
+      }
+      .branding
+      {
+        background-color:black;color:white;font-family:sans-serif;font-size:20px; margin-top:0px;
+      }
+      .output
+      {
+        height: 100px;
+        background-color: white;
+        font-family: sans-serif;
+        font-size: 45px;
+        color:black;
+
+      }
+      .buttonBackground
+      {
+        background-color: gray;
+        border-color: transparent;
+        color: white;
+        width: 90px;
+        height:90px;
+        font-size: 30px;
+        font-family: sans-serif;
+
+      }
+      .RightBarButton
+      {
+        background-color: darkgrey;
+        margin-top: 0px;
+        height: 72px;
+        width:100px;
+        color:white;
+        font-size: 20px;
+        font-family: sans-serif;
+        border-color: transparent;
+      }
+      .buttonBackgroundArea
+      {
+        width: 280px;
+        background-color: grey;
+
+      }
+      .RightBarButtonArea
+      {
+        position: absolute;
+        top:230px;
+        left:280px;
+        width: 100px;
+        background-color: black;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="jumbotron">
+        <h1>Calculator</h1>
+      </div>
+      <div class="calc">
+        <div id="myCarousel" class="carousel slide" data-ride="carousel">
+
+           <ol class="carousel-indicators">
+             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+             <li data-target="#myCarousel" data-slide-to="1"></li>
+             <li data-target="#myCarousel" data-slide-to="2"></li>
+           </ol>
+          <div class="carousel-inner"style="height:30px;">
+            <div class="item active">
+              <div class="branding text-center" >
+                <b>CASIO</b>
+              </div>
+            </div>
+            <div class="item">
+              <div class="branding text-center" >
+                <b>An Online Calculator</b>
+              </div>
+            </div>
+            <div class="item">
+              <div class="branding text-center" >
+                <b>Designed For You</b>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="output text-right" >
+
+        </div>
+        <div class="output text-right"style="font-size:40px ;color:grey;" >
+
+        </div>
+
+        <div class="buttonBackgroundArea" >
+          <button type="button" name="button7" class="buttonBackground text-center" onclick="input('7')">7</button>
+          <button type="button" name="button8" class="buttonBackground text-center"onclick="input('8')">8</button>
+          <button type="button" name="button9" class="buttonBackground text-center"onclick="input('9')">9</button>
+
+          <button type="button" name="button4" class="buttonBackground text-center"onclick="input('4')">4</button>
+          <button type="button" name="button5" class="buttonBackground text-center"onclick="input('5')">5</button>
+          <button type="button" name="button6" class="buttonBackground text-center"onclick="input('6')">6</button>
+
+          <button type="button" name="button1" class="buttonBackground text-center"onclick="input('1')">1</button>
+          <button type="button" name="button2" class="buttonBackground text-center"onclick="input('2')">2</button>
+          <button type="button" name="button3" class="buttonBackground text-center"onclick="input('3')">3</button>
+
+          <button type="button" name="buttonDeci" class="buttonBackground text-center"onclick="input('.')">.</button>
+          <button type="button" name="button0" class="buttonBackground text-center"onclick="input('0')">0</button>
+          <button type="button" name="buttonEqual" class="buttonBackground text-center"onclick="result('=')">=</button>
+        </div>
+
+        <div class="RightBarButtonArea text-center">
+          <button type="button" name="buttonDel"class="RightBarButton"onclick= "operation('del')" >DEL</button>
+
+          <button type="button" name="buttonDiv" class="RightBarButton"onclick="operation('/')">/</button>
+
+          <button type="button" name="buttonMul" class="RightBarButton"onclick="operation('x')">x</button>
+
+          <button type="button" name="buttonSub"class="RightBarButton"onclick="operation('-')" >-</button>
+
+          <button type="button" name="buttonAdd"class="RightBarButton"onclick="operation('+')" >+</button>
+        </div>
+      </div>
+    </div>
+
+<script type="text/javascript">
+var num1='';
+var num2='';
+var dev=document.getElementsByClassName('output text-right');
+var flag=0;
+var equal=0;
+function input(x)
+{
+  if(x!='=')
+  {
+    if(flag==0||equal==1)
+    {
+    num1=num1+x;
+    }
+
+    else
+    {
+    num2=num2+x;
+
+    result('a');
+    }
+    dev[0].innerHTML+=(x);
+
+  }
+
+}
+var ch='';
+function operation(y)
+{
+  if(y!='del')
+  {
+  ch=y;
+  dev[0].innerHTML+=(ch);
+  flag=1;
+  equal=0;
+  }
+  else
+  {
+
+    var str=dev[0].innerHTML;
+    str=str.substring(0,str.length-1);
+    dev[0].innerHTML=str;
+   if(flag==1&&num2!='')
+   num2=num2.substring(0,num2.length-1);
+   else if (flag==0)
+   num1=num1.substring(0,num1.length-1);
+   else if(flag==1&&equal==1)
+   {
+     flag=0;
+     equal=0;
+     num1=num1.substring(0,num1.length-1);
+   }
+
+   else
+   {
+   y='';
+   flag=0;
+   equal=0;
+   }
+
+   if(str.length<=0)
+   {
+     num1='';
+     num2='';
+     flag=0;
+     equal=0;
+   }
+   console.log("delete");
+   console.log(str);
+   console.log(num1);
+   console.log(num2);
+  }
+
+}
+function result(z)
+{
+  var res=0.0;
+  switch (ch) {
+    case '+':
+       res=(parseFloat(num1))+(parseFloat(num2));
+      break;
+    case '-':
+       res=(parseFloat(num1))-(parseFloat(num2));
+      break;
+    case 'x':
+       res=(parseFloat(num1))*(parseFloat(num2));
+      break;
+    case '/':
+       res=(parseFloat(num1))/(parseFloat(num2));
+      break;
+    default:
+     res=0.0;
+  }
+   res=Math.round(res*100)/100;
+  if(z=='=')
+  {
+    num1='';
+    num2='';
+    ch='';
+    flag=0;
+
+    console.log(res);
+
+    dev[0].innerHTML=(res);
+    dev[1].innerHTML="";
+    num1=res.toString();
+    flag=1;
+    equal=1;
+  }
+  dev[1].innerHTML=(res);
+   res=0.0;
+}
+
+</script>
+
+  </body>
+</html>
