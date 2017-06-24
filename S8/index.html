@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>S8</title>
+    <style >
+    body
+    {
+      background-color: skyblue;
+    }
+    @keyframes dash
+    {
+      from
+      {
+        stroke-dashoffset:260px;
+      }
+
+      to
+      {
+        stroke:white;
+        stroke-dashoffset:0px;
+      }
+    }
+    .myanimPath
+    {
+      stroke-dasharray:260px;
+      stroke-dashoffset:260px;
+      stroke-linecap:round;
+
+      stroke-opacity:1;
+
+      animation: dash 1 2s linear forwards ;
+
+    }
+    .myanimPath2
+    {
+      stroke-dasharray:260px;
+      stroke-dashoffset:260px;
+      stroke-linecap:round;
+      stroke-opacity:1;
+
+      animation: dash 1 2s linear forwards ;
+      animation-delay: 1.5s;
+    }
+
+
+    </style>
+
+    <script type="text/javascript">
+    /*function script()
+    {
+     var ts=document.getElementsByClassName('myanimPath');
+     var ls=document.getElementsByClassName('myanimPath2');
+
+     //ts[0].style.webkitAnimation='dash 5s linear forwards';
+     ts[0].addEventListener('webkitAnimationEnd',function(){
+       //ts[0].style.webkitAnimation='';
+       //ts[0].style.opacity='0';
+       //document.body.style.backgroundColor="skyblue";
+       ls[0].style.webkitAnimation='dash 1 0.5s linear forwards';
+
+     },false);
+     ls[0].addEventListener('webkitAnimationEnd',function(){
+       ls[3].style.webkitAnimation='dash 1 2s linear forwards';
+       ls[4].style.webkitAnimation='dash 1 2s linear forwards';
+     },false);
+
+     ls[3].addEventListener('webkitAnimationEnd',function(){
+       ls[1].style.webkitAnimation='dash 1 2s linear forwards';
+       ls[2].style.webkitAnimation='dash 1 2s linear forwards';
+     },false);
+
+   }
+    </script>
+
+
+  </head>
+  <body >
+    <center>
+    <svg height="1050"width="800"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xhtml">
+
+      <g transform="rotate(15)">
+      <path id="path1" class="myanimPath2" d="M 300 350 q 150 70 0 150" stroke="transparent"fill="transparent" stroke-width="20"  />
+      <path id="path11" class="myanimPath"d="M 300 195 q -150 90 0 155" stroke="transparent"fill="transparent" stroke-width="20"/>
+      </g>
+     <g transform="translate(-45,5)">
+      <path id="path2"class="myanimPath2"style="animation-delay:4s;"d="M 500 410 q 150 70 0 150" stroke="transparent"fill="transparent" stroke-width="20"/>
+      <path id="path22"class="myanimPath2"style="animation-delay:4s;"d="M 500 410 q -150 70 0 150" stroke="transparent"fill="transparent" stroke-width="20"/>
+
+      <path id="path3"class="myanimPath2"style="animation-delay:2.5s;"d="M 500 255 q -150 90 0 155" stroke="transparent"fill="transparent" stroke-width="20"/>
+      <path id="path33"class="myanimPath2"style="animation-delay:2.5s;"d="M 500 255 q 150 90 0 155" stroke="transparent"fill="transparent" stroke-width="20"/>
+     </g>
+
+    </svg>
+  </center>
+
+
+
+  </body>
+</html>
