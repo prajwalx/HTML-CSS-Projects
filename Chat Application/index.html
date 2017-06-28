@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Chat</title>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+
+     <div class="chat">
+        <input type="text" class="chat-name" placeholder="Enter your name">
+        <div class="chat-messages">
+          <div class="chat-message1">
+            <span class="txt1"></span>
+          </div>
+          <div class="chat-message2">
+            <span class="txt2"></span>
+          </div>
+        </div>
+        <textarea placeholder="Type Your message"></textarea>
+        <div class="chat-status">
+          Status:<span>Idle</span>
+        </div>
+
+     </div>
+
+     <script src="http://192.168.1.103:8001/socket.io/socket.io.js">
+     </script>
+     <script type="text/javascript">
+     (function(){
+       var getNode=function(s){
+         return document.querySelector(s);
+       },
+
+       //get Required Nodes
+       status=getNode('.chat-status'),
+       textarea=getNode('.chat textarea'),
+       chatName=getNode('.chat-name'),
+       messages=getNode('.chat-messages'),
+       statusDefault=status.textContent,
+
+       setStatus = function(s){
+         status.textContent=s;
+         if(s!== statusDefault){
+           var delay= setTimeout(function(){
+             setStatus(statusDefault);
+             clearInterval(delay);
+           },3000);
+         }
+       };
+       //console.log(statusDefault);
+       setStatus('Testing.');
+
+       try{
+         var socket=io.connect('http://192.168.1.103:8001');
+       }
+       catch(e){
+         //Set Status to Warn User
+       }
+       if(socket !==undefined){
+
+         //Listen for Output
+         socket.on('output',function(data){
+           if(data.length){
+             //Loop through Results
+             for(var x =0;x<data.length;x=x+1){
+               var message = document.createElement('span');
+
+
+               if(data[x].name===chatName.value){
+               message.setAttribute('class','txt2 chat-message2 ');
+
+               }
+               else{
+               message.setAttribute('class','txt1 chat-message1 ');
+
+               }
+               //message.setAttribute('class','txt1 chat-message1 ');
+               message.textContent=data[x].name + ': '+data[x].message;
+
+
+               //Append
+
+               messages.appendChild(message);
+               messages.insertBefore(message,messages.firstChild);
+             }
+           }
+
+         });
+
+         //Listen for a Status
+         socket.on('status',function(data){
+           setStatus((typeof data === 'object') ? data.message : data);
+
+           if(data.clear === true){
+             textarea.value='';
+           }
+
+         });
+         //Listen for Keydown
+        textarea.addEventListener('keydown',function(event){
+          var self=this,
+          name=chatName.value;
+
+          //console.log(event);
+
+          if(event.which === 13 && event.shiftKey === false){
+            socket.emit('input',{
+              name:name,
+              message:self.value
+            });
+            event.preventDefault();
+          }
+        });
+       }
+
+
+     })();
+
+     </script>
+
+  </body>
+</html>
