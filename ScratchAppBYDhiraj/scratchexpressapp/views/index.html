@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Express App</title>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+    $(document).ready(function(){
+      $('#button1').click(function(){
+        var x = $('#text1').val();
+        $.get('/GetValue/'+x, function(data, status){
+          $('#para1').html(data);
+        });
+      });
+    });
+    </script>
+  </head>
+  <body>
+    <h2>Welcome to Express</h2>
+    <input type="text" id="text1"/><br/><br/>
+    <button id="button1">Submit</button><br/><br/>
+    <p id="para1"></p>
+  </body>
+</html>
