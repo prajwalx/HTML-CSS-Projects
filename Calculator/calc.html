@@ -11,8 +11,8 @@
       .calc
       {
         position: relative;
-        width: 390px;
-        height: 600px;
+        width: 100%;
+        height: 100%;
         background-color: transparent;
         border: 5px solid black;
       }
@@ -34,8 +34,8 @@
         background-color: gray;
         border-color: transparent;
         color: white;
-        width: 90px;
-        height:90px;
+        width: 30%;
+        height: 90px;
         font-size: 30px;
         font-family: sans-serif;
 
@@ -45,7 +45,7 @@
         background-color: darkgrey;
         margin-top: 0px;
         height: 72px;
-        width:100px;
+        width:100%;
         color:white;
         font-size: 20px;
         font-family: sans-serif;
@@ -53,7 +53,8 @@
       }
       .buttonBackgroundArea
       {
-        width: 280px;
+        width: 82%;
+
         background-color: grey;
 
       }
@@ -61,17 +62,22 @@
       {
         position: absolute;
         top:230px;
-        left:280px;
-        width: 100px;
+        left:80%;
+        width: 20%;
+
         background-color: black;
       }
     </style>
   </head>
   <body>
     <div class="container">
-      <div class="jumbotron">
+      <div class="jumbotron text-center">
         <h1>Calculator</h1>
       </div>
+    </div>
+    <div class="container"style="width:19.2%;min-width:300px;height:600px;padding-left:0px;padding-right:0px;">
+
+
       <div class="calc">
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
 
@@ -100,13 +106,16 @@
         </div>
 
         <div class="output text-right" >
-
+        0
         </div>
         <div class="output text-right"style="font-size:40px ;color:grey;" >
-
+        0
         </div>
 
-        <div class="buttonBackgroundArea" >
+        <div class="row" style="margin-right:0px;margin-left:0px;">
+
+
+        <div class="buttonBackgroundArea col-sm-9" style="padding-right:0px;padding-left:0px;">
           <button type="button" name="button7" class="buttonBackground text-center" onclick="input('7')">7</button>
           <button type="button" name="button8" class="buttonBackground text-center"onclick="input('8')">8</button>
           <button type="button" name="button9" class="buttonBackground text-center"onclick="input('9')">9</button>
@@ -124,7 +133,7 @@
           <button type="button" name="buttonEqual" class="buttonBackground text-center"onclick="result('=')">=</button>
         </div>
 
-        <div class="RightBarButtonArea text-center">
+        <div class="RightBarButtonArea text-center col-sm-3"style="padding-right:0px;padding-left:0px;">
           <button type="button" name="buttonDel"class="RightBarButton"onclick= "operation('del')" >DEL</button>
 
           <button type="button" name="buttonDiv" class="RightBarButton"onclick="operation('/')">/</button>
@@ -135,6 +144,7 @@
 
           <button type="button" name="buttonAdd"class="RightBarButton"onclick="operation('+')" >+</button>
         </div>
+       </div>
       </div>
     </div>
 
