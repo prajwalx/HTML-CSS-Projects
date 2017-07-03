@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet"type="text/css" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <title>Admin</title>
+    <style>
+    .MenuIcon
+    {
+  width: 35px;
+  height: 3px;
+  background-color: black;
+  margin: 6px 0;
+
+
+    }
+    .menIco
+    {
+      position: relative;
+      top:8px;
+      left:285px;
+    }
+    .topMovies
+    {
+      /*background-color: indigo;*/
+      background-color: rgba(220,20,60,0.7);
+
+      margin-left: 0 !important;
+      margin-top: 0 !important;
+
+      float: left !important;
+      height: 100% !important;
+      width: 20% !important;
+      min-width: 250px !important;
+    position: fixed;
+    z-index: -1 ;
+
+    }
+    .menbod
+    {
+      margin-top:4px;margin-left:0;opacity:1;
+    }
+    .list-group .list-group-item
+    {
+      /*text-align:center;color:white;*/
+      text-align:center;color:darkred;
+      font-size: 13px;
+     /*background-color: blueviolet;*/
+     background-color: white;
+     border-color: inherit;
+     font-family:lavanderia;
+
+    }
+    .list-group .list-group-item .active a{
+      color:black !important;
+    }
+
+
+    </style>
+  </head>
+  <body>
+
+    <div class="container topMovies"style="border:3px solid white;opacity:1;overflow-y:scroll;">
+
+      <center>
+      <b><h4 style="color:white;margin-top:15px;font-family:didot;">BOOK MY MOVIE</h4></b>
+
+        <div class="horiLine"style="width:100%;border:solid 0.6px white !important;border-color:white;">
+        </div>
+      </br>
+      <div class="closeMen"onclick="openMenu()"style="margin-top:4px;margin-left:0;">
+        <div class="MenuIcon"style="transform:rotate(-45deg) translate(-9px,4px);background-color:white;">
+
+        </div>
+        <div class="MenuIcon"style="transform:rotate(45deg);background-color:white;opacity:0;">
+
+        </div>
+        <div class="MenuIcon"style="transform:rotate(45deg) translate(-8px,-4px);background-color:white;">
+
+        </div>
+      </div>
+
+      </center>
+
+     </br>
+
+      <div class="list-group">
+        <a href="#"  class="list-group-item active">DASHBOARD</a></br>
+        <a href="#" class="list-group-item">ADD THEATRE</a></br>
+        <a href="#" class="list-group-item">ADD MOVIE</a></br>
+        <a href="#" class="list-group-item">SHOW THEATRES</a></br>
+        <a href="#"class="list-group-item">ADD SHOW TIMINGS</a></br>
+
+      </div>
+
+    </div>
+
+    <div class="container"name="con"style="background-color:whitesmoke;width:100% !important;height:100% !important;position:absolute;">
+
+<div class="menbod"onclick="openMenu()">
+  <div class="MenuIcon">
+
+  </div>
+  <div class="MenuIcon">
+
+  </div><div class="MenuIcon">
+
+  </div>
+</div>
+
+    </div>
+
+<script >
+
+
+  function openMenu()
+  {
+
+    var con=document.getElementsByName('con');
+    var menu=document.getElementsByClassName('container topMovies');
+    var mb=document.getElementsByClassName('menbod');
+
+    mb[0].style.opacity=mb[0].style.opacity==='0'?'1':'0';
+
+    menu[0].style.zIndex=menu[0].style.zIndex==='10'?'-1':'10';
+    //  con[0].style.marginLeft=con[0].style.marginLeft==='20%'?'0':"20%";
+
+  }
+
+
+
+
+
+
+
+</script>
+  </body>
+</html>
